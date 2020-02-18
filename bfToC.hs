@@ -6,6 +6,8 @@ import Text.ParserCombinators.Parsec
 import Data.Char
 
 
+
+
 data Code a = Empty | Bracketed (Code a) (Code a) | Code a (Code a) deriving(Show,Eq)
 
 instance Functor Code where
