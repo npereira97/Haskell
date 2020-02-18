@@ -59,6 +59,7 @@ reconstruct (Code code expr) = code ++ (reconstruct expr)
 -- collect epressions of form [(no brackets)]
 collect :: (Code String) -> [String]
 collect Empty = []
+
 collect (Bracketed (Code str Empty) expr) = (str) : (collect expr)
 collect (Bracketed expr1 expr2) = (collect expr1) ++ (collect expr2)
 collect (Code _ expr) = (collect expr)
